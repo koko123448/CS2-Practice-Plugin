@@ -181,7 +181,7 @@ namespace CSPracc
             if (state == DataModules.Enums.match_state.live) { return; }
             state = DataModules.Enums.match_state.live;
             RoundRestoreManager.CleanupOldFiles();
-            Server.ExecuteCommand("exec CSPRACC\\5on5.cfg");
+            Server.ExecuteCommand("exec CSPracc\\5on5.cfg");
             Methods.MsgToServer("Starting Match!");
             Server.ExecuteCommand("bot_kick");
             Server.ExecuteCommand("mp_warmup_end 1");
@@ -309,8 +309,8 @@ namespace CSPracc
         public override void ConfigureEnvironment()
         {
             DataModules.Constants.Methods.MsgToServer("Loading match mode.");
-            Server.ExecuteCommand("exec CSPRACC\\undo_pracc.cfg");
-            Server.ExecuteCommand("exec CSPRACC\\5on5_warmup.cfg");
+            Server.ExecuteCommand("exec CSPracc\\undo_pracc.cfg");
+            Server.ExecuteCommand("exec CSPracc\\5on5_warmup.cfg");
             EventHandler?.Dispose();
             EventHandler = new MatchEventHandler(CSPraccPlugin.Instance!, new MatchCommandHandler(this),this);
             state = Enums.match_state.warmup;
