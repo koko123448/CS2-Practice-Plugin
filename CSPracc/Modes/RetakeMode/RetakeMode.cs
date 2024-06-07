@@ -47,8 +47,8 @@ namespace CSPracc.Modes
             Utils.ServerMessage("Admin loaded retake mode.");
             status = RetakeModeStatus.live;
             Server.PrintToConsole("CSPRACC: Loading retake config");
-            Server.ExecuteCommand("exec CSPRACC\\undo_pracc.cfg");
-            Server.ExecuteCommand("exec CSPRACC\\retake.cfg");
+            Server.ExecuteCommand("exec CSPracc\\undo_pracc.cfg");
+            Server.ExecuteCommand("exec CSPracc\\retake.cfg");
         }
 
         public void ShowGunMenu(CCSPlayerController player)
@@ -120,7 +120,7 @@ namespace CSPracc.Modes
         public override void ConfigureEnvironment()
         {
             DataModules.Constants.Methods.MsgToServer("Loading retakes mode.");
-            Server.ExecuteCommand("exec CSPRACC\\retake.cfg");
+            Server.ExecuteCommand("exec CSPracc\\retake.cfg");
             EventHandler?.Dispose();
             EventHandler = new RetakeEventHandler(CSPraccPlugin.Instance!, new RetakeCommandHandler(this),this);
         }
