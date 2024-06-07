@@ -47,8 +47,8 @@ namespace CSPracc.Modes
 
             Utils.ServerMessage("Admin loaded prefire mode.");
             Server.PrintToConsole("CSPRACC: Loading retake config");
-            Server.ExecuteCommand("exec CSPRACC\\undo_pracc.cfg");
-           //Server.ExecuteCommand("exec CSPRACC\\5on5.cfg");
+            Server.ExecuteCommand("exec CSPracc\\undo_pracc.cfg");
+           //Server.ExecuteCommand("exec CSPracc\\5on5.cfg");
             Server.ExecuteCommand("mp_limitteams 0");
             Server.ExecuteCommand("bot_add_ct");
             Server.ExecuteCommand("bot_add_ct");
@@ -256,8 +256,8 @@ namespace CSPracc.Modes
         public override void ConfigureEnvironment()
         {
             DataModules.Constants.Methods.MsgToServer("Loading prefire mode.");
-            Server.ExecuteCommand("exec CSPRACC\\undo_pracc.cfg");
-            Server.ExecuteCommand("exec CSPRACC\\prefire.cfg");
+            Server.ExecuteCommand("exec CSPracc\\undo_pracc.cfg");
+            Server.ExecuteCommand("exec CSPracc\\prefire.cfg");
             EventHandler?.Dispose();
             EventHandler = new PrefireEventHandler(CSPraccPlugin.Instance!, new PrefireCommandHandler(this),this);
             Utils.ServerMessage($"Use {ChatColors.Green}.routes{ChatColors.White} to show menu of routes.");
