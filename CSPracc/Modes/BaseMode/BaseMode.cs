@@ -34,7 +34,7 @@ namespace CSPracc.Modes
         public  virtual void ConfigureEnvironment()
         {
             DataModules.Constants.Methods.MsgToServer("Restoring default config.");
-            Server.ExecuteCommand("exec CSPRACC\\undo_pracc.cfg");
+            Server.ExecuteCommand("exec CSPracc\\undo_pracc.cfg");
             Server.ExecuteCommand("exec server.cfg");
             EventHandler = new BaseEventHandler(CSPraccPlugin.Instance!, new BaseCommandHandler(this));           
         }
