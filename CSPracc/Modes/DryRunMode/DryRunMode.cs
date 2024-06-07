@@ -39,7 +39,7 @@ namespace CSPracc
             ReadyTeamT = false;
             if (state == DataModules.Enums.match_state.live) { return; }
             state = DataModules.Enums.match_state.live;
-            Server.ExecuteCommand("exec CSPRACC\\DryRun.cfg");
+            Server.ExecuteCommand("exec CSPracc\\DryRun.cfg");
             Methods.MsgToServer("Starting DryRun!");
             Server.ExecuteCommand("bot_kick");
             Server.ExecuteCommand("mp_warmup_end 1");
